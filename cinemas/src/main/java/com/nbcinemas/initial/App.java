@@ -1,4 +1,4 @@
-package com.nbcinemas.com.nbcinemas.initial;
+package com.nbcinemas.initial;
 
 /**
  * Hello world!

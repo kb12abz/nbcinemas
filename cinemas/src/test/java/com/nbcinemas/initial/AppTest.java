@@ -1,4 +1,4 @@
-package com.nbcinemas.com.nbcinemas.initial;
+package com.nbcinemas.initial;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
