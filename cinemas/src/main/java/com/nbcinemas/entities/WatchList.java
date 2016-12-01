@@ -24,20 +24,25 @@ import org.hibernate.annotations.FetchMode;
  *
  */
 @Entity
-@Table (name = "WatchList")
+@Table(name = "WatchList")
 public class WatchList {
 
 	@Id
-	@Column (name = "watchListID")
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name = "watchListID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@NotNull
 	private int watchListID;
-	
+
 	@OneToMany(mappedBy = "watchList", fetch = FetchType.EAGER)
 	@Fetch(value = FetchMode.SELECT)
 	private List<Film> films;
 	
-	public WatchList(){}
+	@Column (name = "deleted")
+	private boolean deleted;
+
+	public WatchList() {
+		deleted = false;
+	}
 
 	/**
 	 * @return the watchListID
@@ -47,7 +52,8 @@ public class WatchList {
 	}
 
 	/**
-	 * @param watchListID the watchListID to set
+	 * @param watchListID
+	 *            the watchListID to set
 	 */
 	public void setWatchListID(int watchListID) {
 		this.watchListID = watchListID;
@@ -61,9 +67,31 @@ public class WatchList {
 	}
 
 	/**
+	 * @param films
+	 *            the films to set
+	 */
+	public void addFilm(Film film) {
+		films.add(film);
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
+	/**
 	 * @param films the films to set
 	 */
 	public void setFilms(List<Film> films) {
 		this.films = films;
-	}	
+	}
 }

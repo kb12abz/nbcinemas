@@ -3,6 +3,8 @@
  */
 package com.nbcinemas.entities;
 
+import java.beans.ConstructorProperties;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,6 +44,9 @@ public class Seat {
 	@JoinColumn(name="screen_id")
 	private Screen screen;
 	
+	@Column (name = "deleted")
+	private boolean deleted;
+	
 	public Seat(){}
 	
 	public Seat(int id, String row, int number, boolean occupied, Screen screen){
@@ -50,6 +55,7 @@ public class Seat {
 		this.number = number;
 		this.occupied = occupied;
 		this.screen = screen;
+		deleted = false;
 	}
 	
 	public Seat(String row, int number, boolean occupied, Screen screen){
@@ -57,6 +63,7 @@ public class Seat {
 		this.number = number;
 		this.occupied = occupied;
 		this.screen = screen;
+		deleted = false;
 	}
 
 	/**
@@ -127,5 +134,19 @@ public class Seat {
 	 */
 	public void setScreen(Screen screen) {
 		this.screen = screen;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

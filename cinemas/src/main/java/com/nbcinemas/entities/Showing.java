@@ -42,6 +42,9 @@ public class Showing {
 	@Column (name = "timeOfShowing")
 	private String timeOfShowing;
 	
+	@Column (name = "deleted")
+	private boolean deleted;
+	
 	public Showing(){}
 	
 	public Showing(int id, Location location, Screen screen, Film film, Date date, String time){
@@ -51,6 +54,7 @@ public class Showing {
 		this.film = film;
 		this.dateOfShowing = date;
 		this.timeOfShowing = time;
+		deleted = false;
 	}
 	
 	public Showing(Location location, Screen screen, Film film, Date date, String time){
@@ -59,6 +63,7 @@ public class Showing {
 		this.film = film;
 		this.dateOfShowing = date;
 		this.timeOfShowing = time;
+		deleted = false;
 	}
 
 	/**
@@ -143,5 +148,19 @@ public class Showing {
 	 */
 	public void setTimeOfShowing(String timeOfShowing) {
 		this.timeOfShowing = timeOfShowing;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

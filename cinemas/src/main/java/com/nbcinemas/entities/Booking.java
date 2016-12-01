@@ -37,19 +37,25 @@ public class Booking {
 	@Column (name = "totalCost")
 	private double totalCost;
 	
-	public Booking(){}
+	@Column (name = "deleted")
+	private boolean deleted;
 	
-	public Booking(int id, Date date, Customer customer, double cost){
+	public Booking() {
+	}
+
+	public Booking(int id, Date date, Customer customer, double cost) {
 		this.bookingID = id;
 		this.dateOfBooking = date;
 		this.customer = customer;
 		this.totalCost = cost;
+		deleted = false;
 	}
-	
+
 	public Booking(Date date, Customer customer, double cost){
 		this.dateOfBooking = date;
 		this.customer = customer;
 		this.totalCost = cost;
+		deleted = false;
 	}
 
 	/**
@@ -107,4 +113,20 @@ public class Booking {
 	public void setTotalCost(double totalCost) {
 		this.totalCost = totalCost;
 	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+	
+	
 }

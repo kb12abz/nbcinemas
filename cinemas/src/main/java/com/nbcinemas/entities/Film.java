@@ -3,6 +3,8 @@
  */
 package com.nbcinemas.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,43 +19,54 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
-@Table (name = "Film")
+@Table(name = "Film")
 public class Film {
 
 	@Id
-	@Column (name = "filmID")
+	@Column(name = "filmID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@NotNull
 	private int filmID;
-	
-	
-	@Column (name = "name")
+
+	@Column(name = "name")
 	private String filmName;
-	
-	@Column (name = "rating")
+
+	@Column(name = "rating")
 	private int rating;
-	
-	@Column (name = "description")
+
+	@Column(name = "description")
 	private String description;
-	
-	@Column (name = "imagePath")
+
+	@Column(name = "imagePath")
 	private String imagePath;
+
+	@Column(name = "lastViewingDate")
+	private Date lastViewingDate;
+
 	
-	public Film(){}
+	@Column (name = "deleted")
+	private boolean deleted;
 	
-	public Film(int id, String filmName, int rating, String description, String imagePath){
+	public Film() {
+	}
+
+	public Film(int id, String filmName, int rating, String description, String imagePath, Date lastViewingDate) {
 		this.filmID = id;
 		this.filmName = filmName;
 		this.rating = rating;
 		this.description = description;
 		this.imagePath = imagePath;
+		this.lastViewingDate = lastViewingDate;
+		deleted = false;
 	}
-	
-	public Film(String filmName, int rating, String description, String imagePath){
+
+	public Film(String filmName, int rating, String description, String imagePath, Date lastViewingDate) {
 		this.filmName = filmName;
 		this.rating = rating;
 		this.description = description;
 		this.imagePath = imagePath;
+		this.lastViewingDate = lastViewingDate;
+		deleted = false;
 	}
 
 	/**
@@ -64,7 +77,8 @@ public class Film {
 	}
 
 	/**
-	 * @param filmID the filmID to set
+	 * @param filmID
+	 *            the filmID to set
 	 */
 	public void setFilmID(int filmID) {
 		this.filmID = filmID;
@@ -78,7 +92,8 @@ public class Film {
 	}
 
 	/**
-	 * @param filmName the filmName to set
+	 * @param filmName
+	 *            the filmName to set
 	 */
 	public void setFilmName(String filmName) {
 		this.filmName = filmName;
@@ -92,7 +107,8 @@ public class Film {
 	}
 
 	/**
-	 * @param rating the rating to set
+	 * @param rating
+	 *            the rating to set
 	 */
 	public void setRating(int rating) {
 		this.rating = rating;
@@ -106,7 +122,8 @@ public class Film {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -120,9 +137,38 @@ public class Film {
 	}
 
 	/**
-	 * @param imagePath the imagePath to set
+	 * @param imagePath
+	 *            the imagePath to set
 	 */
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	/**
+	 * @return the lastViewingDate
+	 */
+	public Date getLastViewingDate() {
+		return lastViewingDate;
+	}
+
+	/**
+	 * @param lastViewingDate the lastViewingDate to set
+	 */
+	public void setLastViewingDate(Date lastViewingDate) {
+		this.lastViewingDate = lastViewingDate;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

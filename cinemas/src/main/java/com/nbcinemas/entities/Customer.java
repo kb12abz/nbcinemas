@@ -17,47 +17,58 @@ import javax.validation.constraints.NotNull;
  *
  */
 @Entity
-@Table (name = "Customer")
+@Table(name = "Customer")
 public class Customer {
-	
+
 	@Id
-	@Column (name = "customerID")
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name = "customerID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@NotNull
 	private int customerID;
-	
-	@Column (name = "name")
+
+	@Column(name = "name")
 	private String name;
-	
+
 	@OneToOne
 	private Address address;
-	
-	@Column (name = "contact")
+
+	@Column(name = "contact")
 	private String contact;
-	
-	@Column (name = "email")
+
+	@Column(name = "email")
 	private String email;
-	
+
 	@OneToOne
 	private WatchList watchList;
+
+	@Column(name = "password")
+	private String password;
 	
-	public Customer(){}
-	
-	public Customer(int id, String name, Address address, String contact, String email){
+	@Column (name = "deleted")
+	private boolean deleted;
+
+	public Customer() {
+	}
+
+	public Customer(int id, String name, Address address, String contact, String email, String password) {
 		this.customerID = id;
 		this.name = name;
 		this.address = address;
 		this.contact = contact;
 		this.email = email;
 		watchList = new WatchList();
+		this.password = password;
+		deleted = false;
 	}
-	
-	public Customer(String name, Address address, String contact, String email){
+
+	public Customer(String name, Address address, String contact, String email, String password) {
 		this.name = name;
 		this.address = address;
 		this.contact = contact;
 		this.email = email;
 		watchList = new WatchList();
+		this.password = password;
+		deleted = false;
 	}
 
 	/**
@@ -68,7 +79,8 @@ public class Customer {
 	}
 
 	/**
-	 * @param customerID the customerID to set
+	 * @param customerID
+	 *            the customerID to set
 	 */
 	public void setCustomerID(int customerID) {
 		this.customerID = customerID;
@@ -82,7 +94,8 @@ public class Customer {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -96,7 +109,8 @@ public class Customer {
 	}
 
 	/**
-	 * @param address the address to set
+	 * @param address
+	 *            the address to set
 	 */
 	public void setAddress(Address address) {
 		this.address = address;
@@ -110,7 +124,8 @@ public class Customer {
 	}
 
 	/**
-	 * @param contact the contact to set
+	 * @param contact
+	 *            the contact to set
 	 */
 	public void setContact(String contact) {
 		this.contact = contact;
@@ -124,9 +139,52 @@ public class Customer {
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param email
+	 *            the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	/**
+	 * @return the watchList
+	 */
+	public WatchList getWatchList() {
+		return watchList;
+	}
+
+	/**
+	 * @param watchList the watchList to set
+	 */
+	public void setWatchList(WatchList watchList) {
+		this.watchList = watchList;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

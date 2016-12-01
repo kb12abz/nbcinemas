@@ -32,7 +32,12 @@ public class WatchListDetails {
 	@ManyToOne
 	private WatchList watchList;
 	
-	public WatchListDetails(){}
+	@Column (name = "deleted")
+	private boolean deleted;
+	
+	public WatchListDetails(){
+		deleted = false;
+	}
 	
 	public WatchListDetails(Film film){
 		this.film = film;
@@ -78,5 +83,19 @@ public class WatchListDetails {
 	 */
 	public void setWatchList(WatchList watchList) {
 		this.watchList = watchList;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

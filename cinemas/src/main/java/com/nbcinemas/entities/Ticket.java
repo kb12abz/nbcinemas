@@ -41,6 +41,9 @@ public class Ticket {
 	@Column(name = "cost")
 	private double cost;
 	
+	@Column (name = "deleted")
+	private boolean deleted;
+	
 	public Ticket(){}
 	
 	public Ticket(int id, Booking booking, Showing showing, Seat seat, String type, int cost){
@@ -50,6 +53,7 @@ public class Ticket {
 		this.seat = seat;
 		this.type =type;
 		this.cost = cost;
+		deleted = false;
 	}
 	
 	public Ticket(Booking booking, Showing showing, Seat seat, String type, int cost){
@@ -58,6 +62,7 @@ public class Ticket {
 		this.seat = seat;
 		this.type =type;
 		this.cost = cost;
+		deleted = false;
 	}
 
 	/**
@@ -142,5 +147,19 @@ public class Ticket {
 	 */
 	public void setCost(double cost) {
 		this.cost = cost;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

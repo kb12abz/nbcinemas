@@ -41,6 +41,9 @@ public class Location {
 	@Column (name = "email")
 	private String email;
 	
+	@Column (name = "deleted")
+	private boolean deleted;
+	
 	public Location(){}
 	
 	public Location(int id, String name, String openingTimes, Address address, int contactNumber, String email){
@@ -49,6 +52,7 @@ public class Location {
 		this.openingTimes = openingTimes;
 		this.address = address;
 		this.email = email;
+		deleted = false;
 	}
 	
 	public Location(String name, String openingTimes, Address address, int contactNumber, String email){
@@ -56,6 +60,7 @@ public class Location {
 		this.openingTimes = openingTimes;
 		this.address = address;
 		this.email = email;
+		deleted = false;
 	}
 
 	/**
@@ -140,5 +145,19 @@ public class Location {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
-	}	
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
 }

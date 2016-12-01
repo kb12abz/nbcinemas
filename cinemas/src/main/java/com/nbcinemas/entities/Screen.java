@@ -40,17 +40,27 @@ public class Screen {
 	@Fetch(value = FetchMode.SELECT)
 	private List<Seat> seats;
 	
+	@Column (name = "active")
+	private boolean active;
+	
+	@Column (name = "deleted")
+	private boolean deleted;
+	
 	public Screen(){}
 	
 	public Screen(int id, int number, List<Seat> seats){
 		this.screenID = id;
 		this.numberOfSeats = number;
 		this.seats = seats;
+		active = true;
+		deleted = false;
 	}
 	
 	public Screen(int number, List<Seat> seats){
 		this.numberOfSeats = number;
 		this.seats = seats;
+		active = true;
+		deleted = false;
 	}
 
 	/**
@@ -93,5 +103,33 @@ public class Screen {
 	 */
 	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public boolean isActive() {
+		return active;
+	}
+
+	/**
+	 * @param active the active to set
+	 */
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	/**
+	 * @return the deleted
+	 */
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	/**
+	 * @param deleted the deleted to set
+	 */
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }
