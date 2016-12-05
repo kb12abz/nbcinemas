@@ -1,0 +1,49 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+		<!-- Tab title defined -->
+	<ui:define name="title">
+			<h:outputText value="#{selectedFilm.film.filmName}" />
+	</ui:define>
+	
+	<!-- Banner defined -->
+	<ui:define name="bannerImage">
+		<h:graphicImage value="#{selectedFilm.film.bannerImagePath}" />
+	</ui:define>
+	
+   <ui:define name ="maincontent">
+   <div id="film">
+    <div id="selectedFilm" class ="headingTxt pull-left pull-right">
+      <h1 id="filmTitle"><h:outputText value="#{selectedFilm.film.filmName}" /></h1>
+      <hr class="line"/>
+   </div>
+
+   <div class="row">
+    <div class="col-6 col-m-6">
+      <div id="filmImgpaddingAdder">
+      	<h:graphicImage value="#{selectedFilm.film.coverImagePath}" />
+      </div>
+    </div>
+    <div class = "col-6 col-m-6">
+      <div id="filmTxtpaddingAdder">
+        <h3>Description</h3>
+        <hr class="line"/>
+        <p><h:outputText value="#{selectedFilm.film.description}" /></p>
+        <h3>Rating</h3>
+        <h3><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></h3>
+
+        <h3>View Showing Times!</h3>
+
+      </div>
+    </div>
+
+
+   </div>
+   </div>
+   </ui:define>
+</ui:composition>

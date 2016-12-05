@@ -37,8 +37,11 @@ public class Film {
 	@Column(name = "description")
 	private String description;
 
-	@Column(name = "imagePath")
-	private String imagePath;
+	@Column(name = "coverImagePath")
+	private String coverImagePath;
+	
+	@Column(name = "BannerImagePath")
+	private String bannerImagePath;
 
 	@Column(name = "lastViewingDate")
 	private Date lastViewingDate;
@@ -50,21 +53,23 @@ public class Film {
 	public Film() {
 	}
 
-	public Film(int id, String filmName, int rating, String description, String imagePath, Date lastViewingDate) {
+	public Film(int id, String filmName, int rating, String description, String coverImagePath,String bannerImagePath, Date lastViewingDate) {
 		this.filmID = id;
 		this.filmName = filmName;
 		this.rating = rating;
 		this.description = description;
-		this.imagePath = imagePath;
+		this.coverImagePath = coverImagePath;
+		this.bannerImagePath = bannerImagePath;
 		this.lastViewingDate = lastViewingDate;
 		deleted = false;
 	}
 
-	public Film(String filmName, int rating, String description, String imagePath, Date lastViewingDate) {
+	public Film(String filmName, int rating, String description, String coverImagePath, String bannerImagePath, Date lastViewingDate) {
 		this.filmName = filmName;
 		this.rating = rating;
 		this.description = description;
-		this.imagePath = imagePath;
+		this.coverImagePath = coverImagePath;
+		this.bannerImagePath = bannerImagePath;
 		this.lastViewingDate = lastViewingDate;
 		deleted = false;
 	}
@@ -129,19 +134,33 @@ public class Film {
 		this.description = description;
 	}
 
+	
 	/**
-	 * @return the imagePath
+	 * @return the coverImagePath
 	 */
-	public String getImagePath() {
-		return imagePath;
+	public String getCoverImagePath() {
+		return coverImagePath;
 	}
 
 	/**
-	 * @param imagePath
-	 *            the imagePath to set
+	 * @param coverImagePath the coverImagePath to set
 	 */
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
+	public void setCoverImagePath(String coverImagePath) {
+		this.coverImagePath = coverImagePath;
+	}
+
+	/**
+	 * @return the bannerImagePath
+	 */
+	public String getBannerImagePath() {
+		return bannerImagePath;
+	}
+
+	/**
+	 * @param bannerImagePath the bannerImagePath to set
+	 */
+	public void setBannerImagePath(String bannerImagePath) {
+		this.bannerImagePath = bannerImagePath;
 	}
 
 	/**

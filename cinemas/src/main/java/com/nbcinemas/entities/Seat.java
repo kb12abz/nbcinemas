@@ -3,8 +3,6 @@
  */
 package com.nbcinemas.entities;
 
-import java.beans.ConstructorProperties;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,41 +13,41 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
 /**
  * @author kieranbagnall
  *
  */
 
 @Entity
-@Table (name = "Seat")
+@Table(name = "Seat")
 public class Seat {
-	
+
 	@Id
-	@Column (name = "seatID")
+	@Column(name = "seatID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@NotNull
 	private int seatID;
-	
+
 	@Column(name = "row")
 	private String row;
-	
+
 	@Column(name = "number")
 	private int number;
-	
+
 	@Column(name = "occupied")
 	private boolean occupied;
-	
+
 	@ManyToOne
-	@JoinColumn(name="screen_id")
+	@JoinColumn(name = "screen_id")
 	private Screen screen;
-	
-	@Column (name = "deleted")
+
+	@Column(name = "deleted")
 	private boolean deleted;
-	
-	public Seat(){}
-	
-	public Seat(int id, String row, int number, boolean occupied, Screen screen){
+
+	public Seat() {
+	}
+
+	public Seat(int id, String row, int number, boolean occupied, Screen screen) {
 		this.seatID = id;
 		this.row = row;
 		this.number = number;
@@ -57,8 +55,8 @@ public class Seat {
 		this.screen = screen;
 		deleted = false;
 	}
-	
-	public Seat(String row, int number, boolean occupied, Screen screen){
+
+	public Seat(String row, int number, boolean occupied, Screen screen) {
 		this.row = row;
 		this.number = number;
 		this.occupied = occupied;
@@ -74,7 +72,8 @@ public class Seat {
 	}
 
 	/**
-	 * @param seatID the seatID to set
+	 * @param seatID
+	 *            the seatID to set
 	 */
 	public void setSeatID(int seatID) {
 		this.seatID = seatID;
@@ -88,7 +87,8 @@ public class Seat {
 	}
 
 	/**
-	 * @param row the row to set
+	 * @param row
+	 *            the row to set
 	 */
 	public void setRow(String row) {
 		this.row = row;
@@ -102,7 +102,8 @@ public class Seat {
 	}
 
 	/**
-	 * @param number the number to set
+	 * @param number
+	 *            the number to set
 	 */
 	public void setNumber(int number) {
 		this.number = number;
@@ -116,7 +117,8 @@ public class Seat {
 	}
 
 	/**
-	 * @param occupied the occupied to set
+	 * @param occupied
+	 *            the occupied to set
 	 */
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
@@ -130,7 +132,8 @@ public class Seat {
 	}
 
 	/**
-	 * @param screen the screen to set
+	 * @param screen
+	 *            the screen to set
 	 */
 	public void setScreen(Screen screen) {
 		this.screen = screen;
@@ -144,7 +147,8 @@ public class Seat {
 	}
 
 	/**
-	 * @param deleted the deleted to set
+	 * @param deleted
+	 *            the deleted to set
 	 */
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;

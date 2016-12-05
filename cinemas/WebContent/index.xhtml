@@ -1,0 +1,94 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Tab title defined -->
+	<ui:define name="title">
+			nbCinemas HomePage
+	</ui:define>
+
+	<!-- Banner defined -->
+	<ui:define name="bannerImage">
+		<img src="img/strangeBanner.jpg" />
+	</ui:define>
+
+
+	<ui:define name="maincontent">
+		<!-- what starts here  -->
+		<div id="what">
+			<div id="whatson" class="headingTxt pull-left pull-right">
+				<h1>Whats On!</h1>
+				<hr class="line" />
+			</div>
+			<div class="row">
+				<ui:repeat var="film" value="#{films.dataModel}">
+					<div class="col-4 col-m-4">
+						<div class="paddingAdder">
+							<h:form>
+								<h:commandLink action="#{films.view(film)}">
+									<h:graphicImage value="#{film.coverImagePath}" />
+								</h:commandLink>
+							</h:form>
+						</div>
+						<div class="paddingAdder">
+							<h3>
+								<h:form>
+									<h:commandLink action="#{films.view(film)}"
+										value="#{film.filmName}" />
+								</h:form>
+							</h3>
+							<hr class="line" />
+						</div>
+					</div>
+				</ui:repeat>
+			</div>
+
+		</div>
+
+
+		<!-- coming starts here -->
+
+		<div id="soon">
+			<div id="comingSoon" class="headingTxt pull-left pull-right">
+				<h1>Coming Soon...</h1>
+				<hr class="line" />
+			</div>
+
+			<div class="row">
+				<div class="col-4 col-m-4">
+					<div class="paddingAdder">
+						<img src="img/santaCover.jpg" />
+					</div>
+					<div class="paddingAdder">
+						<h3>Bad Santa</h3>
+						<hr class="line" />
+					</div>
+				</div>
+				<div class="col-4 col-m-4">
+					<div class="paddingAdder">
+						<img src="img/iceCover.jpg" />
+					</div>
+					<div class="paddingAdder">
+						<h3>Ice Age Again!</h3>
+						<hr class="line" />
+					</div>
+				</div>
+				<div class="col-4 col-m-4">
+					<div class="paddingAdder">
+						<img src="img/snowdenCover.jpg" />
+					</div>
+					<div class="paddingAdder">
+						<h3>Snowden</h3>
+						<hr class="line" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+

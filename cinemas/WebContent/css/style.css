@@ -1,0 +1,328 @@
+/*Setting Of Defaults*/
+
+
+@font-face {
+    font-family: 'cinemas';
+    src:url(../fonts/cinemas.ttf) format('truetype');
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+html,body,span, input, div, h1, h2, h3, h4, h5, h6, p,img, ol, ul, li, footer, header {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+		font-family: "cinemas";
+		color: white;
+	}
+
+html, body{
+	height: 100%;
+	background-color: black;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.paddingAdder{
+	margin-left: 2.5em;
+	margin-right: 2.5em;
+	padding-bottom: 10px;
+	height: 100%;
+	overflow: hidden;
+}
+
+#filmImgpaddingAdder{
+	margin-left: 4em;
+}
+
+#filmTxtpaddingAdder{
+	margin-right: 4em;
+}
+
+#loginPaddingAdder{
+	display: block;
+	margin: auto;
+}
+
+#wrapper{
+    min-height: 100%;
+    position: relative;
+}
+
+h1,h2,h3,h4{
+	font-weight:550;
+}
+
+.headingTxt{
+	letter-spacing: -1px;
+	font-size: 2.5em;
+	color: white;
+}
+
+.pull-right{
+	padding-left: 1em;
+}
+
+.pull-left{
+	padding-right: 1em;
+}
+
+ul {
+	margin: 0;
+}
+
+	ul li {
+		display: inline-block;
+		margin-left: 0.5em;
+		font-size: 1.4em;
+	}
+
+		ul li a {
+			display: block;
+			color: white;
+			text-decoration: none;
+			height: 3em;
+			line-height: 3em;
+			padding: 0 0.5em 0 0.5em;
+			outline: 0;
+		}
+
+/* mouse over link */
+ul li a:hover {
+    color: white;
+}
+
+	a{
+		color: white;
+		text-decoration: none;
+	}
+
+		a:hover {
+    		opacity: 0.5;
+		}
+
+.break{
+        clear: both;
+       }
+
+.heading-top {
+  text-align: center;
+  padding: 0em 0em 2em 0em;
+}
+
+	.heading-top h3 {
+  		font-size: 2.5em;
+  		margin-bottom: 0.2em;
+  		margin-top: 1em;
+	}
+
+		.heading-top p {
+  			font-size: 1em;
+  			color:inherit;
+  			width: 80%;
+  			margin: 0 auto;
+  			line-height: 1.8em;
+  		}
+
+
+#pageDetail{
+	margin-top: 55px;
+}
+
+.line{ 
+    display:block;
+    border:none;
+    color:white;
+    height:1px;
+    background:red;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(red), to(black));
+}
+/*End Of Defaults*/
+
+
+/*Setting Of Nav & Banner & Search*/
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: black;
+    height: 85px;
+    line-height: 80px;
+    box-shadow: 0 0 1em 0 rgba(255, 0, 0, 1);
+    z-index: +1;
+}
+
+#logo {
+		position: absolute;
+		left: 1em;
+		top: 0;
+		height: 3em;
+	}
+
+	#nav {
+		position: absolute;
+		right: 0.5em;
+		top: 0;
+		height: 80px;
+		line-height: 80px;
+	}
+
+.banner {
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+
+.banner img{
+	width: 100%;
+	max-height: 400px;
+}
+/*End Of Nav & Banner & Banner-Text*/
+
+/*whats on*/
+#whatson, #comingSoon{
+	margin-top: 20px;
+}
+
+#what img, #soon img{
+	display: block;
+	margin:auto;
+	width: 220px;
+	height: 325px;
+}
+
+#what img:hover, #soon img:hover{
+	opacity: 0.5;
+}
+
+#what h3, #soon h3{
+	text-align: center;
+	font-size: 1.25em;
+	text-decoration: none;
+}
+
+#what h3:hover, #soon h3:hover{
+	opacity: 0.5;
+}
+
+#filmTitle{
+	text-align: center;
+}
+
+#film img{
+	display: block;
+	margin: auto;
+	width: 300px;
+	height: 445px;
+}
+
+#film h3{
+	font-size: 2em;
+	margin-bottom: 15px;
+}
+
+#film p, #film span{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#loginPaddingAdder input{
+	display: block;
+	margin: auto;
+	margin-bottom: 25px;
+	height: 40px;
+    width: 180px;
+    text-align: center;
+	background-color: black;
+	box-shadow: 0 0 1em 0 rgba(255, 0, 0, 1);
+}
+
+#loginPaddingAdder h3{
+	display: block;
+	margin: auto;
+	margin-bottom: 25px;
+	height: 40px;
+    width: 180px;
+    text-align: center;
+}
+
+#loginPaddingAdder h3:hover{
+	opacity: 0.5;
+}
+
+#loginPaddingAdder p{
+	display: block;
+	margin: auto;
+    width: 180px;
+    text-align: center;
+}
+
+
+
+/*footer css start*/
+footer{
+  width: 100%;
+  margin-top: 25px;
+  background: black;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  height: 50px;
+  text-align: center;
+  /*box-shadow: 0 0 1em 0 rgba(255, 0, 0, 1);*/
+}
+
+footer ul li{
+	font-size: 0.85em;
+}
+/*footer css end*/
+
+/*screen responsiveness start*/
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
+/*screen responsiveness end*/
+
+

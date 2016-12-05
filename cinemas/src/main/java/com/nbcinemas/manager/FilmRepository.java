@@ -12,7 +12,7 @@ import com.nbcinemas.entities.*;
 
 public interface FilmRepository {
 	// Create
-	public void persistFilm(String filmName, int rating, String description, String imagePath, Date lastViewingDate);
+	public void persistFilm(String filmName, int rating, String description, String coverImagePath, String bannerImagePath, Date lastViewingDate);
 
 	// Read
 	public List<Film> getFilmByKeyword(String keyword);
@@ -30,7 +30,9 @@ public interface FilmRepository {
 
 	public void updateFilmDescription(String description, int id);
 
-	public void updateFilmImagePath(String imagePath, int id);
+	public void updateFilmCoverImagePath(String imagePath, int id);
+	
+	public void updateFilmBannerImagePath(String imagePath, int id);
 
 	// delete
 	public void deleteFilm(int id);

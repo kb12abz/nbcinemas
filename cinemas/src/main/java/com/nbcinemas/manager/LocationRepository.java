@@ -3,8 +3,6 @@
  */
 package com.nbcinemas.manager;
 
-import java.util.List;
-
 import com.nbcinemas.entities.Address;
 import com.nbcinemas.entities.Location;
 

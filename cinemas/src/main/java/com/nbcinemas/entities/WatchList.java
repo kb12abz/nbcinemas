@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -36,8 +35,8 @@ public class WatchList {
 	@OneToMany(mappedBy = "watchList", fetch = FetchType.EAGER)
 	@Fetch(value = FetchMode.SELECT)
 	private List<Film> films;
-	
-	@Column (name = "deleted")
+
+	@Column(name = "deleted")
 	private boolean deleted;
 
 	public WatchList() {
@@ -82,14 +81,16 @@ public class WatchList {
 	}
 
 	/**
-	 * @param deleted the deleted to set
+	 * @param deleted
+	 *            the deleted to set
 	 */
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
 
 	/**
-	 * @param films the films to set
+	 * @param films
+	 *            the films to set
 	 */
 	public void setFilms(List<Film> films) {
 		this.films = films;

@@ -4,6 +4,7 @@
 package com.nbcinemas.initialData;
 import com.nbcinemas.entities.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Singleton;
@@ -30,10 +31,18 @@ public class InitialData {
 	public List<WatchListDetails> watchDetails = new ArrayList<WatchListDetails>();
 	
 	public InitialData(){
-		
-		Address address = new Address("Line1", "line2", "town", "county", "postcode");
-		address.setId(1);
-		addresses.add(address);
+		Film f1 = new Film(1, "Doctor Strange", 2, "Doctor Stephen Strange (Benedict Cumberbatch) is a brilliant yet arrogant neurosurgeon whose life is turned upside down when he barely survives a devastating car accident. Embarking on a journey of self-discovery, he travels to the Far East where he becomes the protégé of the mysterious Ancient One (Tilda Swinton). A mystical being she opens Stephen’s mind to extraordinary alternate dimensions, which Stephen eventually learns to manipulate in his new guise as superhero Doctor Strange. Soon Stephen’s abilities are put to the ultimate test when villainous Kaecilius (Mads Mikkelsen) threatens the future of the entire world. ", "img/strangeCover.jpg", "img/strangeBanner.jpg", new Date(116,10,19));
+		films.add(f1);
+		Film f2 = new Film(2, "Fantastic Beasts & Where To Find Them", 4, "It’s 1926, and 'Magizoologist' Newt Scamander (Eddie Redmayne) arrives in New York City for a meeting with the Magical Congress of the United States of America. He doesn’t arrive alone, however – in his magical suitcase live a menagerie of dangerous creatures. But when the beasts escape, officials from the Magical Congress send the wizarding authorities after Newt, as the peaceful relationship between magic people and Muggles comes under threat. ", "img/fantasticCover.jpg", "img/fantasticBanner.jpg", new Date(116,10,19));
+		films.add(f2);
+		Film f3 = new Film(3, "Rogue One", 4, "It is a period of civil war. The Galactic Empire rules the galaxy, and are putting the finishing touches to their ultimate super-weapon, the Death Star. The Rebellion plan to steal the its plans in order to detect a weak spot in which to destroy it. They recruit Jyn Erso (Felicity Jones) to work with Rebel fighter Cassian Andor (Diego Luna) and a team to undertake the deadly mission. ", "img/rogueCover.jpg", "img/rogueBanner.jpg", new Date(116,10,19));
+		films.add(f3);
+		Film f4 = new Film(4, "Miss Peregrine's Home For Peculiar Children", 3, "Sixteen-year-old Jacob Portman (Asa Butterfield) has grown up listening to his grandfather's bizarre stories of the residents of a strange and mysterious island orphanage known as Miss Peregrine's Home for Peculiars. When the old man dies in mysterious circumstances, he leaves young Jacob clues that set him on an extraordinary quest. What he finds is a magical place, spanning different worlds and times, whose residents possess astonishing abilities. But they are also under threat from sinister monsters. Now it's up to Jacob to use his own 'peculiarity' to save them. ", "img/missCover.jpg", "img/missBanner.jpg", new Date(116,10,19));
+		films.add(f4);
+		Film f5 = new Film(5, "Bridget Jones's Baby ", 4, "Loveable singleton Bridget Jones approaches motherhood in this latest entry of the smash-hit comedy series. 12 years after the events of The Edge of Reason, hapless Bridget (Renee Zellweger) is now in her forties and enjoying her role as a high-flying news producer, but is no longer with hunky beau Mark Darcy (Colin Firth). She’s therefore a bit surprised to find out that she’s pregnant – but who’s the father? Is it Mark, or her handsome new fella Jack Qwant (Patrick Dempsey)? One thing’s for sure: Bridget’s journey as she attempts to find out promises to be as hilarious and revealing as ever. ", "img/bridgetCover.jpg", "img/bridgetBanner.jpg", new Date(116,10,19));
+		films.add(f5);
+		Film f6 = new Film(6, "Inferno", 3, "Eminent Harvard symbologist Professor Robert Langdon (Tom Hanks) awakes in a Florence hospital bed suffering from amnesia. Now he faces two challenges. First, he must recover his memories. Then he has to tackle the most extraordinary puzzle of his career. Brilliant yet utterly deranged scientist Bertrand Zobrist (Ben Foster) plans to unleash a global plague that could wipe out the human race. In a desperate bid to stop him, Langdon races against time to solve a mystery that hinges on Dante's 14th century vision of hell. This time, however, he has a resourceful assistant: medic Dr. Sienna Brooks (Felicity Jones). ", "img/infoCover.jpg", "img/infoBanner.jpg", new Date(116,10,19));
+		films.add(f6);
 	}
 
 	/**

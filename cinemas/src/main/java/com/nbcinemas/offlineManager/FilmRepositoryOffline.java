@@ -20,8 +20,8 @@ public class FilmRepositoryOffline implements FilmRepository {
 	private InitialData initialData;
 
 	@Override
-	public void persistFilm(String filmName, int rating, String description, String imagePath, Date lastViewingDate) {
-		Film f = new Film(filmName, rating, description, imagePath, lastViewingDate);
+	public void persistFilm(String filmName, int rating, String description, String coverImagePath, String bannerImagePath, Date lastViewingDate) {
+		Film f = new Film(filmName, rating, description, coverImagePath, bannerImagePath, lastViewingDate);
 		f.setFilmID(initialData.films.size() + 1);
 		initialData.addFilm(f);
 
@@ -90,10 +90,19 @@ public class FilmRepositoryOffline implements FilmRepository {
 	}
 
 	@Override
-	public void updateFilmImagePath(String imagePath, int id) {
+	public void updateFilmCoverImagePath(String imagePath, int id) {
 		for (Film f : initialData.films) {
 			if (f.getFilmID() == id) {
-				f.setImagePath(imagePath);
+				f.setCoverImagePath(imagePath);
+			}
+		}
+	}
+	
+	@Override
+	public void updateFilmBannerImagePath(String imagePath, int id) {
+		for (Film f : initialData.films) {
+			if (f.getFilmID() == id) {
+				f.setBannerImagePath(imagePath);
 			}
 		}
 	}
