@@ -1,6 +1,7 @@
 package com.nbcinemas.offlineManager;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class ShowingRepositoryOffline implements ShowingRepository {
 	private InitialData initialdata;
 
 	@Override
-	public void persistShowing(Location location, Screen screen, Film film, Date date, String time) {
+	public void persistShowing(Location location, Screen screen, Film film, Calendar date, String time) {
 		Showing s = new Showing(location, screen, film, date, time);
 		s.setShowingID(initialdata.showings.size() + 1);
 		initialdata.addShowing(s);
@@ -43,11 +44,16 @@ public class ShowingRepositoryOffline implements ShowingRepository {
 	public List<Showing> getShowingsByLocation(String location) {
 		ArrayList<Showing> foundShowings = new ArrayList<Showing>();
 		for (Showing s : initialdata.showings) {
-			if (s.getLocation().getCinemasName().toLowerCase().equals(location)) {
+			if (s.getLocation().getCinemasName().toLowerCase().equals(location.toLowerCase())) {
 				foundShowings.add(s);
 			}
 		}
 		return foundShowings;
+	}
+	
+	@Override
+	public List<Showing> findAll(){
+		return initialdata.showings;
 	}
 
 	@Override
@@ -79,7 +85,7 @@ public class ShowingRepositoryOffline implements ShowingRepository {
 	}
 
 	@Override
-	public void updateDateOfShowing(Date date, int id) {
+	public void updateDateOfShowing(Calendar date, int id) {
 		for (Showing s : initialdata.showings) {
 			if (s.getShowingID() == id) {
 				s.setDateOfShowing(date);

@@ -2,48 +2,75 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="templates/template.xhtml">
+	xmlns:p="http://primefaces.org/ui" template="templates/template.xhtml">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-		<!-- Tab title defined -->
+
+	<!-- Tab title defined -->
 	<ui:define name="title">
-			<h:outputText value="#{selectedFilm.film.filmName}" />
+		<h:outputText value="#{selectedFilm.film.filmName}" />
 	</ui:define>
-	
+
 	<!-- Banner defined -->
 	<ui:define name="bannerImage">
 		<h:graphicImage value="#{selectedFilm.film.bannerImagePath}" />
 	</ui:define>
-	
-   <ui:define name ="maincontent">
-   <div id="film">
-    <div id="selectedFilm" class ="headingTxt pull-left pull-right">
-      <h1 id="filmTitle"><h:outputText value="#{selectedFilm.film.filmName}" /></h1>
-      <hr class="line"/>
-   </div>
 
-   <div class="row">
-    <div class="col-6 col-m-6">
-      <div id="filmImgpaddingAdder">
-      	<h:graphicImage value="#{selectedFilm.film.coverImagePath}" />
-      </div>
-    </div>
-    <div class = "col-6 col-m-6">
-      <div id="filmTxtpaddingAdder">
-        <h3>Description</h3>
-        <hr class="line"/>
-        <p><h:outputText value="#{selectedFilm.film.description}" /></p>
-        <h3>Rating</h3>
-        <h3><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></h3>
+	<ui:define name="maincontent">
+		<div id="film">
+			<div id="selectedFilm" class="headingTxt pull-left pull-right">
+				<h1 id="filmTitle">
+					<h:outputText value="#{selectedFilm.film.filmName}" />
+				</h1>
+				<hr class="line" />
+			</div>
 
-        <h3>View Showing Times!</h3>
+			<div class="row">
+				<div class="col-6 col-m-6">
+					<div id="filmImgpaddingAdder">
+						<h:graphicImage value="#{selectedFilm.film.coverImagePath}" />
+					</div>
+				</div>
+				<div class="col-6 col-m-6">
+					<div id="filmTxtpaddingAdder">
+						<h3>Description</h3>
+						<hr class="line" />
+						<p>
+							<h:outputText value="#{selectedFilm.film.description}" />
+						</p>
+						<h3>Rating</h3>
+						<div>
+							<h:form id="rating">
+								<p:rating value="#{films.rating}" readonly="true"/>
+							</h:form>
+						</div>
 
-      </div>
-    </div>
-
-
-   </div>
-   </div>
-   </ui:define>
+						<h3>Showing Times</h3>
+						<h:outputText value="#{showings.showingDates}" />
+						<div class="row">
+							<ui:repeat var="showing"
+								value="#{showings.showingsForFilmAtLocation}">
+								<div class="col-6 col-m-6">
+									<h2 class="times">
+										<h:form>
+											<h:commandLink action="#{showings.view(showing)}"
+												value="#{showing.dateOfShowing}" />
+										</h:form>
+									</h2>
+								</div>
+								<div class="col-6 col-m-6">
+									<h2 class="times">
+										<h:form>
+											<h:commandLink action="#{showings.view(showing)}"
+												value="#{showing.timeOfShowing}" />
+										</h:form>
+									</h2>
+								</div>
+							</ui:repeat>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
 </ui:composition>

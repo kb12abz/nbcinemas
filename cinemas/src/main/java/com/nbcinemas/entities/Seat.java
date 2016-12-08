@@ -47,20 +47,18 @@ public class Seat {
 	public Seat() {
 	}
 
-	public Seat(int id, String row, int number, boolean occupied, Screen screen) {
+	public Seat(int id, String row, int number, boolean occupied) {
 		this.seatID = id;
 		this.row = row;
 		this.number = number;
 		this.occupied = occupied;
-		this.screen = screen;
 		deleted = false;
 	}
 
-	public Seat(String row, int number, boolean occupied, Screen screen) {
+	public Seat(String row, int number, boolean occupied) {
 		this.row = row;
 		this.number = number;
 		this.occupied = occupied;
-		this.screen = screen;
 		deleted = false;
 	}
 
@@ -122,21 +120,6 @@ public class Seat {
 	 */
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
-	}
-
-	/**
-	 * @return the screen
-	 */
-	public Screen getScreen() {
-		return screen;
-	}
-
-	/**
-	 * @param screen
-	 *            the screen to set
-	 */
-	public void setScreen(Screen screen) {
-		this.screen = screen;
 	}
 
 	/**

@@ -160,4 +160,21 @@ public class Location {
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
+	
+	 @Override
+	    public boolean equals(Object other) {
+	         Integer idAsInt = (Integer) locationID;
+		 
+		 return (other instanceof Location) && (idAsInt != null)
+	            ? idAsInt.equals(((Location) other).locationID)
+	            : (other == this);
+	    }
+
+	    @Override
+	    public int hashCode() {
+	    	  Integer idAsInt = (Integer) locationID;
+	    	return (idAsInt != null)
+	            ? (this.getClass().hashCode() + idAsInt.hashCode())
+	            : super.hashCode();
+	    }
 }

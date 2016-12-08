@@ -3,7 +3,10 @@
  */
 package com.nbcinemas.initialData;
 import com.nbcinemas.entities.*;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -43,6 +46,94 @@ public class InitialData {
 		films.add(f5);
 		Film f6 = new Film(6, "Inferno", 3, "Eminent Harvard symbologist Professor Robert Langdon (Tom Hanks) awakes in a Florence hospital bed suffering from amnesia. Now he faces two challenges. First, he must recover his memories. Then he has to tackle the most extraordinary puzzle of his career. Brilliant yet utterly deranged scientist Bertrand Zobrist (Ben Foster) plans to unleash a global plague that could wipe out the human race. In a desperate bid to stop him, Langdon races against time to solve a mystery that hinges on Dante's 14th century vision of hell. This time, however, he has a resourceful assistant: medic Dr. Sienna Brooks (Felicity Jones). ", "img/infoCover.jpg", "img/infoBanner.jpg", new Date(116,10,19));
 		films.add(f6);
+		
+		Address a1 = new Address(1, "line1", "line2", "town", "county", "postcode"); 
+		Location l1 = new Location(1, "Basildon", "Something", a1 , 1268, "something@something");
+		locations.add(l1);
+		Location l2 = new Location(1, "Southend", "Something", a1 , 1268, "something@something");
+		locations.add(l2);
+				
+		Seat seat1 = new Seat(1, "a", 1, false);
+		seats.add(seat1);
+		Screen sc1 = new Screen(1,seats);
+		screens.add(sc1);
+		
+		Screen sc2 = new Screen(2,seats);
+		screens.add(sc2);
+	
+		
+		Calendar c1 = Calendar.getInstance();
+		c1.set(2016, 11,7); // 7/12/2016
+		
+		Calendar c2 = Calendar.getInstance();
+		c2.set(2016, 11, 7); //7/12/2016
+		
+		Calendar c3 = Calendar.getInstance();
+		c3.set(2016, 11,10);
+		
+		Calendar c4 = Calendar.getInstance();
+		c4.set(2016, 11,10);
+		
+		Calendar c5 = Calendar.getInstance();
+		c5.set(2016, 11,10);
+		
+		Calendar c6= Calendar.getInstance();
+		c6.set(2016, 11,11);
+		
+		
+		
+		
+		Showing sh1 = new Showing(1, l1, sc1, f1, c1, "12.00");
+		Showing sh2 = new Showing(2, l1, sc1, f1, c2, "12.45");
+		Showing sh3 = new Showing(3, l1, sc1, f1, c3, "14.00");
+		Showing sh4 = new Showing(4, l1, sc1, f1, c4, "15.45");
+		
+		Showing sh5 = new Showing(5, l1, sc2, f3, c1, "09.00");
+		Showing sh6 = new Showing(6, l1, sc2, f3, c1, "11.00");
+		
+		Showing sh7 = new Showing(7, l1, sc2, f4, c6, "09.00");
+		Showing sh8 = new Showing(8, l1, sc2, f4, c6, "17.00");
+		Showing sh9 = new Showing(9, l1, sc2, f4, c6, "18.15");
+		
+		Showing sh10 = new Showing(10, l1, sc2, f6, c5, "19.00");
+				
+		
+		Showing sh11 = new Showing(11, l2, sc1, f2, c5, "09.00");
+		Showing sh12 = new Showing(12, l2, sc1, f2, c5, "09.45");
+		
+		Showing sh13 = new Showing(13, l2, sc2, f3, c4, "09.00");
+		Showing sh14 = new Showing(14, l2, sc2, f3, c4, "11.45");
+		Showing sh15 = new Showing(15, l2, sc2, f3, c5, "15.00");
+		Showing sh16 = new Showing(16, l2, sc2, f3, c5, "18.45");
+		
+		
+		Showing sh17 = new Showing(17, l2, sc2, f5, c1, "09.00");
+		Showing sh18 = new Showing(18, l2, sc2, f5, c1, "11.45");
+		Showing sh19 = new Showing(19, l2, sc2, f5, c5, "15.00");
+		Showing sh20 = new Showing(20, l2, sc2, f5, c5, "18.45");
+		
+		
+		
+		showings.add(sh1);
+		showings.add(sh2);
+		showings.add(sh3);
+		showings.add(sh4);
+		showings.add(sh5);
+		showings.add(sh6);
+		showings.add(sh7);
+		showings.add(sh8);
+		showings.add(sh9);
+		showings.add(sh10);
+		showings.add(sh11);
+		showings.add(sh12);
+		showings.add(sh13);
+		showings.add(sh14);
+		showings.add(sh15);
+		showings.add(sh16);
+		showings.add(sh17);
+		showings.add(sh18);
+		showings.add(sh19);
+		showings.add(sh20);	
 	}
 
 	/**

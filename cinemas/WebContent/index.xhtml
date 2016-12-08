@@ -21,24 +21,25 @@
 		<!-- what starts here  -->
 		<div id="what">
 			<div id="whatson" class="headingTxt pull-left pull-right">
-				<h1>Whats On!</h1>
+				<h1>Whats On... <h:outputText value=" #{selectedLocation.location.cinemasName}" /></h1>
+				<h3><h:form id="reset"><h:commandLink action="#{showings.reset}" value="#{showings.allowRest()}"/></h:form></h3> 
 				<hr class="line" />
 			</div>
 			<div class="row">
-				<ui:repeat var="film" value="#{films.dataModel}">
+				<ui:repeat var="showing" value="#{showings.dataModel}">
 					<div class="col-4 col-m-4">
 						<div class="paddingAdder">
 							<h:form>
-								<h:commandLink action="#{films.view(film)}">
-									<h:graphicImage value="#{film.coverImagePath}" />
+								<h:commandLink action="#{showings.view(showing)}">
+									<h:graphicImage value="#{showing.coverImagePath}" />
 								</h:commandLink>
 							</h:form>
 						</div>
 						<div class="paddingAdder">
 							<h3>
 								<h:form>
-									<h:commandLink action="#{films.view(film)}"
-										value="#{film.filmName}" />
+									<h:commandLink action="#{showings.view(showing)}"
+										value="#{showing.filmName}" />
 								</h:form>
 							</h3>
 							<hr class="line" />

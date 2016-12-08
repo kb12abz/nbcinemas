@@ -1,5 +1,7 @@
 package com.nbcinemas.offlineManager;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
@@ -87,6 +89,11 @@ public class LocationRepositoryOffline implements LocationRepository {
 				l.setDeleted(true);
 			}
 		}
+	}
+
+	@Override
+	public List<Location> findAll() {
+		return intialdata.locations;
 	}
 
 }

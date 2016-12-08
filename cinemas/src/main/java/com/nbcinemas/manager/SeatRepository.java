@@ -13,7 +13,7 @@ import com.nbcinemas.entities.Seat;
 public interface SeatRepository {
 
 	// Create
-	public void persistSeat(String row, int number, boolean occupied, Screen screen);
+	public void persistSeat(String row, int number, boolean occupied);
 
 	// Read
 	public Seat getSeatById(int id);

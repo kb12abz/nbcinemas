@@ -17,8 +17,8 @@ public class SeatRepositoryOffline implements SeatRepository {
 	private InitialData intialdata;
 
 	@Override
-	public void persistSeat(String row, int number, boolean occupied, Screen screen) {
-		Seat s = new Seat(row, number, occupied, screen);
+	public void persistSeat(String row, int number, boolean occupied) {
+		Seat s = new Seat(row, number, occupied);
 		s.setSeatID(intialdata.seats.size()+1);
 		intialdata.addSeat(s);
 

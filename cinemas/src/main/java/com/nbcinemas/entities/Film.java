@@ -32,7 +32,7 @@ public class Film {
 	private String filmName;
 
 	@Column(name = "rating")
-	private int rating;
+	private Integer rating;
 
 	@Column(name = "description")
 	private String description;
@@ -53,7 +53,7 @@ public class Film {
 	public Film() {
 	}
 
-	public Film(int id, String filmName, int rating, String description, String coverImagePath,String bannerImagePath, Date lastViewingDate) {
+	public Film(int id, String filmName, Integer rating, String description, String coverImagePath,String bannerImagePath, Date lastViewingDate) {
 		this.filmID = id;
 		this.filmName = filmName;
 		this.rating = rating;
@@ -64,7 +64,7 @@ public class Film {
 		deleted = false;
 	}
 
-	public Film(String filmName, int rating, String description, String coverImagePath, String bannerImagePath, Date lastViewingDate) {
+	public Film(String filmName, Integer rating, String description, String coverImagePath, String bannerImagePath, Date lastViewingDate) {
 		this.filmName = filmName;
 		this.rating = rating;
 		this.description = description;
@@ -107,7 +107,7 @@ public class Film {
 	/**
 	 * @return the rating
 	 */
-	public int getRating() {
+	public Integer getRating() {
 		return rating;
 	}
 
@@ -115,7 +115,7 @@ public class Film {
 	 * @param rating
 	 *            the rating to set
 	 */
-	public void setRating(int rating) {
+	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
 

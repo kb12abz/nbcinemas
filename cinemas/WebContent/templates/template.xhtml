@@ -1,65 +1,76 @@
 <!DOCTYPE html>
-<html lang="en"
-xmlns="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:head>
-    <title><ui:insert name ="title"/></title>
+	<title><ui:insert name="title" /></title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 </h:head>
 
 <f:view>
-<body>
-  <div id="wrapper"> 
-    <!-- Header -->
-      <header id="header">
+	<body>
+		<div id="wrapper">
+			<!-- Header -->
+			<header id="header">
 
-        <!-- Logo -->
-          <h1 id="logo" class="headingTxt">nbCinemas</h1>
-        <!-- Nav -->
-          <nav id="nav">
-            <ul>
-              <li><a class="scroll" href="index.xhtml">Whats On</a></li>
-              <li><a class="scroll" href="#soon">Basket</a></li>
-              <li><a class="scroll" href="#soon">Account</a></li>
-              <li><a class="scroll" href="login.xhtml">Login</a></li>
-            </ul>
+				<!-- Logo -->
+				<h1 id="logo" class="headingTxt">nbCinemas</h1>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a class="scroll" href="index.xhtml">Whats On</a></li>
+						<li><a class="scroll" href="#soon">Basket</a></li>
+						<li><a class="scroll" href="#soon">Account</a></li>
+						<li><a class="scroll" href="login.xhtml">Login</a></li>
+					</ul>
+				</nav>
+				<h2>
+					Location -
+					<h:form>
+					<h:selectOneMenu value="#{locations.location}" valueChangeListener="#{locations.LocationChangeListener}" converter="omnifaces.SelectItemsConverter">
+						<f:selectItem itemValue="" noSelectionOption="true"
+							itemLabel="#{locations.locationSet()}" />
+						<f:selectItems value="#{locations.dataModel}" var="location"
+							itemValue="#{location.cinemasName}"
+							itemLabel="#{location.cinemasName}" />
+						<f:ajax listener="#{locations.LocationChangeListener()}" render="@all"/>
+					</h:selectOneMenu>
+					</h:form>
+				</h2>
+				<!--Nav End-->
+			</header>
+			<!-- Header End -->
 
-          </nav>
-        <!--Nav End-->
-      </header>
-    <!-- Header End -->
+			<!--banner start here-->
+			<div class="banner">
+				<ui:insert name="bannerImage" />
+			</div>
+			<!--banner end here-->
 
-    <!--banner start here-->
-      <div class="banner">
-      	<ui:insert name="bannerImage"/>
-      </div>  
-    <!--banner end here-->
-   
-	<ui:insert name ="maincontent"/>  
+			<ui:insert name="maincontent" />
 
-  
-  </div>  
-  <footer>
-    <hr class="line"/>
-    <div class="row">  
-      <ul class= "col-12 col-m-12">
-              <li><a class="scroll" href="#what">SiteMap</a></li>
-               <li><a class="scroll" href="#what">Whats On</a></li>
-              <li><a class="scroll" href="#soon">Basket</a></li>
-              <li><a class="scroll" href="#soon">Account</a></li>
-              <li><a class="scroll" href="">Login</a></li>
-              <li><a class="scroll" href="">Support and Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-  </body>
-  </f:view>
+
+		</div>
+		<footer>
+			<hr class="line" />
+			<div class="row">
+				<ul class="col-12 col-m-12">
+					<li><a class="scroll" href="#">SiteMap</a></li>
+					<li><a class="scroll" href="index.xhtml">Whats On</a></li>
+					<li><a class="scroll" href="#soon">Basket</a></li>
+					<li><a class="scroll" href="#soon">Account</a></li>
+					<li><a class="scroll" href="login.xhtml">Login</a></li>
+					<li><a class="scroll" href="">Support and Contact</a></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</f:view>
 </html>

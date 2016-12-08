@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -37,7 +40,7 @@ public class Showing {
 	private Film film;
 	
 	@Column (name = "dateOfShowing")
-	private Date dateOfShowing;
+	private Calendar dateOfShowing;
 	
 	@Column (name = "timeOfShowing")
 	private String timeOfShowing;
@@ -47,7 +50,7 @@ public class Showing {
 	
 	public Showing(){}
 	
-	public Showing(int id, Location location, Screen screen, Film film, Date date, String time){
+	public Showing(int id, Location location, Screen screen, Film film, Calendar date, String time){
 		this.showingID = id;
 		this.location = location;
 		this.screen = screen;
@@ -57,7 +60,7 @@ public class Showing {
 		deleted = false;
 	}
 	
-	public Showing(Location location, Screen screen, Film film, Date date, String time){
+	public Showing(Location location, Screen screen, Film film, Calendar date, String time){
 		this.location = location;
 		this.screen = screen;
 		this.film = film;
@@ -125,14 +128,17 @@ public class Showing {
 	/**
 	 * @return the dateOfShowing
 	 */
-	public Date getDateOfShowing() {
-		return dateOfShowing;
+	public String getDateOfShowing() {
+		Calendar cal = dateOfShowing;
+		SimpleDateFormat format1 = new SimpleDateFormat("EEE dd MMM");
+		String formatted = format1.format(cal.getTime());
+		return formatted;
 	}
 
 	/**
 	 * @param dateOfShowing the dateOfShowing to set
 	 */
-	public void setDateOfShowing(Date dateOfShowing) {
+	public void setDateOfShowing(Calendar dateOfShowing) {
 		this.dateOfShowing = dateOfShowing;
 	}
 

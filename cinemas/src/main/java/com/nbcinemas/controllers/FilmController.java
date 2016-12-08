@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.nbcinemas.entities.Film;
+import com.nbcinemas.manager.FilmRepository;
 import com.nbcinemas.service.FilmService;
 
 import javax.faces.model.DataModel;
@@ -23,35 +24,15 @@ import javax.faces.model.DataModel;
 @Named("films")
 @SessionScoped
 public class FilmController implements Serializable {
-	
-	@Inject 
+
+	@Inject
 	private SelectedFilm selectedFilm;
-	
+
 	@Inject
 	private FilmService filmService;
-	
-//	private DataModel<Film> dataModel = null;
-	private List<Film> dataModel = null;
-	
-	public List<Film> getDataModel(){
-		if (dataModel ==null){
-			//dataModel = (DataModel<Film>) filmService.findall();
-			dataModel = filmService.findall();
-		}
-		return dataModel;
+
+	public Integer getRating() {
+		return filmService.getRating(selectedFilm.getFilm().getFilmID());
 	}
-	
-	public void setDataModel(List<Film> filmList){
-		//dataModel = (DataModel<Film>) filmList;
-		dataModel = filmList;
-	}
-	
-	public String view(Film film){
-		String returnPage = "film?faces-redirect=true";
-		selectedFilm.setFilm(film);
-		return returnPage;
-	}
-	
-	
 
 }

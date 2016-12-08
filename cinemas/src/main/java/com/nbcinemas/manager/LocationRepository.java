@@ -3,6 +3,8 @@
  */
 package com.nbcinemas.manager;
 
+import java.util.List;
+
 import com.nbcinemas.entities.Address;
 import com.nbcinemas.entities.Location;
 
@@ -19,6 +21,8 @@ public interface LocationRepository {
 	public Location getLocationById(int id);
 
 	public Location getLocationByName(String name);
+	
+	public List<Location> findAll();
 
 	// Update
 	public void updateOpeningTimes(String times, int id);

@@ -3,6 +3,7 @@
  */
 package com.nbcinemas.manager;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -18,13 +19,14 @@ import com.nbcinemas.entities.Showing;
 public interface ShowingRepository {
 
 	// Create
-	public void persistShowing(Location location, Screen screen, Film film, Date date, String time);
+	public void persistShowing(Location location, Screen screen, Film film, Calendar date, String time);
 
 	// Retrieve
 	public Showing getShowingById(int id);
 
 	public List<Showing> getShowingsByLocation(String location);
-
+	
+	public List<Showing> findAll();
 	// Update
 	public void updateLocation(Location location, int id);
 
@@ -32,7 +34,7 @@ public interface ShowingRepository {
 
 	public void updateFil(Film film, int id);
 
-	public void updateDateOfShowing(Date date, int id);
+	public void updateDateOfShowing(Calendar date, int id);
 
 	public void updateTimeOfShowing(String time, int id);
 

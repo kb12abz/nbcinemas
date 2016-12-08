@@ -11,10 +11,16 @@ import com.nbcinemas.manager.FilmRepository;
 @Stateless
 public class FilmService {
 	
-	@Inject FilmRepository filmManager;
+	@Inject 
+	private FilmRepository filmManager;
 	
 	
-	public List<Film> findall(){
+	public Integer getRating(int filmId){
+		Film f = filmManager.getFilmByID(filmId);
+		return f.getRating();		
+	}
+	
+	public List<Film> findall() {
 		List<Film> filmList = filmManager.findAll();
 		return filmList;
 	}
