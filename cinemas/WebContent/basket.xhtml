@@ -1,0 +1,34 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Tab title defined -->
+	<ui:define name="title">
+			Basket
+	</ui:define>
+
+	<!-- Banner defined -->
+	<ui:define name="bannerImage">
+		<img src="img/popcorn.jpg" />
+	</ui:define>
+
+
+	<ui:define name="maincontent">
+		<div class="row">
+			<div class="col-6 col-m-6">
+				<div id="film">
+					<div id="selectedFilm" class="headingTxt pull-left pull-right">
+						<h1 id="basketTitle">Basket</h1>
+						<hr class="line" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+

@@ -2,6 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	template="templates/template.xhtml">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,8 +27,8 @@
     <div class="row">
     <div class="col-12 col-m-12">
       <div id="loginPaddingAdder">
-        <input type="text" placeholder = "Username"/>
-        <input type="password" placeholder="Password"/>
+        <h:inputText value="#{login.email}"  type="email" id="inputEmail" a:placeholder="Username"  autofocus="" requiredMessage="Please enter username"/>
+        <h:inputSecret value="#{login.password}" type="password" id="inputPassword" a:placeholder="Password" requiredMessage="Please Enter Password" />
         <h3 class="headerTxt">Login</h3>
         <p>Not registered? Select Below...</p>
         <h3 class="headerTxt">Register</h3>

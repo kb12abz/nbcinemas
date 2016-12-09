@@ -244,7 +244,7 @@ ul li a:hover {
 }
 
 #what form a{
-	font-size : 20px;
+	font-size : 18px;
 }
 
 #filmTitle{
@@ -339,21 +339,14 @@ footer ul li{
 /*footer css end*/
 
 /*screen responsiveness start*/
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    .col-m-1 {width: 8.33%;}
-    .col-m-2 {width: 16.66%;}
-    .col-m-3 {width: 25%;}
-    .col-m-4 {width: 33.33%;}
-    .col-m-5 {width: 41.66%;}
-    .col-m-6 {width: 50%;}
-    .col-m-7 {width: 58.33%;}
-    .col-m-8 {width: 66.66%;}
-    .col-m-9 {width: 75%;}
-    .col-m-10 {width: 83.33%;}
-    .col-m-11 {width: 91.66%;}
-    .col-m-12 {width: 100%;}
+@media only screen and (max-width: 910px) {
+
+#what img, #soon img {
+    width: 100%;
+    height: auto;
+}	
 }
+
 @media only screen and (min-width: 768px) {
     /* For desktop: */
 .col-1 {width: 8.33%;}
@@ -368,6 +361,145 @@ footer ul li{
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+#film img{
+    width: 75%;
+    height: auto;
+}
+
+}
+
+@media only screen and (max-width: 768px){
+	.col-6{width: 50%;}
+	.col-4{width: 33.33%;}
+	
+	#filmTxtpaddingAdder {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+    .banner img{
+	margin-top: 75px;
+}
+
+#filmImgpaddingAdder {
+    margin-left: 0em;
+}
+
+#film img{
+    width: 75%;
+    height: auto;
+}
+
+footer ul{
+	width: 100%;
+}
+
+}
+
+@media only screen and (max-width: 700px) {
+
+	.col-4, .col-6 {width: 50%;}
+}
+
+
+@media only screen and (max-width: 600px) {
+    /* For tablets: */
+    
+    .col-m-4 {width: 50%;}
+   
+    .col-m-12 {width: 100%;}
+    
+    .banner img{
+	margin-top: 87px;
+}
+}
+
+@media only screen and (max-width: 575px) {
+.col-m-12 {width: 100%;}
+.col-6{width: 50%;}
+	 
+#header{
+   height: 135px; 
+}
+
+#nav{
+	top: 35px;
+    width: 100%;
+    text-align: center;
+    right: 0em;
+}
+
+#logo{
+	width: 100%;
+    text-align: center;
+    left: 0em;
+}
+
+#header h2 {
+	margin-top: 68px;
+}
+
+.banner{
+	margin-top: 51px;
+}
+
+#whatson h1{
+	margin-bottom: 35px;
+}
+
+footer ul {
+	width: 100%;
+}
+
+#reset{
+	margin-top: -67px;
+}
+
+
+
+}
+
+@media only screen and (max-width: 450px) {
+.col-4 {width: 100%;}
+.col-m-12 {width: 100%;}
+.col-6 {width: 100%;}
+    
+#what img, #soon img {
+   width: 220px;
+}
+
+#nav{
+	font-size: 14px;
+}
+
+#header h2{
+	font-size: 21px;
+}
+
+#film img{
+	width: 250px;
+}
+
+#film h3{
+	margin-top: 15px;
+}
+
+#showingTimes .col-6{
+	width: 50%;
+}
+}
+
+@media only screen and (max-width: 320px){
+	#nav{
+	font-size: 13px;
+}
+
+#header h2{
+	font-size: 18px;
+}
+
+
 }
 /*screen responsiveness end*/
 
